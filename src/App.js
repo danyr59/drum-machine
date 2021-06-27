@@ -1,6 +1,7 @@
 import "./style/App.scss";
 import React, { Component } from "react";
 import { bankOne, bankTwo } from "./services/Banks.js";
+import PadBank from "./component/PadBank.js";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -57,6 +58,7 @@ class App extends Component {
     console.log("componentDidMount");
   }
   render() {
+    console.log(this.state.currentPadBank);
     return (
       <div className="App">
         <div className="App-header" id="drum-machine">
@@ -65,9 +67,7 @@ class App extends Component {
               <i className="bi bi-music-note-beamed"></i>
             </div>
             <div className="contenedor2">
-              {/*
-              <PadBank />
-              */}
+              <PadBank currentPadBank={this.state.currentPadBank} />
               <div className="controls-container">
                 <div className="control">
                   <p>Power</p>

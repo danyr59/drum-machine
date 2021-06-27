@@ -1,0 +1,22 @@
+.cont-keys{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    
+    div{
+        width: 100px;
+        height: 80px;
+        border-radius: 5px;
+        cursor: pointer; 
+        background-color: gray;
+        box-shadow: black 3px 3px 5px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+}
+
