@@ -6,6 +6,9 @@ class DrumPad extends React.Component {
     super(props);
     this.state = {};
   }
+  componentDidMount() {
+    document.addEventListener('click', fud)
+  }
   render() {
     return (
       <div>

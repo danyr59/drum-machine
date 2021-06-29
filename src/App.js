@@ -67,7 +67,10 @@ class App extends Component {
               <i className="bi bi-music-note-beamed"></i>
             </div>
             <div className="contenedor2">
-              <PadBank currentPadBank={this.state.currentPadBank} />
+              <PadBank 
+                volume={this.state.sliderVal}
+                currentPadBank={this.state.currentPadBank} 
+              />
               <div className="controls-container">
                 <div className="control">
                   <p>Power</p>
