@@ -15,6 +15,7 @@ class App extends Component {
     this.handlerSelectPower = this.handlerSelectPower.bind(this);
     this.adjustVolume = this.adjustVolume.bind(this);
     this.selectBank = this.selectBank.bind(this);
+    this.updateDisplay = this.updateDisplay.bind(this);
   }
   selectBank() {
     if (this.state.power) {
@@ -40,11 +41,13 @@ class App extends Component {
     }));
   }
   adjustVolume(e) {
-    this.setState((state) => ({
-      sliderVal: e.target.value,
-      display: "Volume" + " " + Math.round(e.target.value),
-    }));
-    setTimeout(() => this.clearDisplay(), 1000);
+    if (this.state.power) {
+      this.setState((state) => ({
+        sliderVal: e.target.value,
+        display: "Volume" + " " + Math.round(e.target.value),
+      }));
+      setTimeout(() => this.clearDisplay(), 1000);
+    }
   }
   clearDisplay() {
     this.setState({
@@ -57,6 +60,13 @@ class App extends Component {
   componentDidMount() {
     console.log("componentDidMount");
   }
+  updateDisplay(textDisplay) {
+    if (this.state.power) {
+      this.setState({
+        display: textDisplay,
+      });
+    }
+  }
   render() {
     console.log(this.state.currentPadBank);
     return (
@@ -67,9 +77,11 @@ class App extends Component {
               <i className="bi bi-music-note-beamed"></i>
             </div>
             <div className="contenedor2">
-              <PadBank 
+              <PadBank
                 volume={this.state.sliderVal}
-                currentPadBank={this.state.currentPadBank} 
+                currentPadBank={this.state.currentPadBank}
+                updateDisplay={this.updateDisplay}
+                power={this.state.power}
               />
               <div className="controls-container">
                 <div className="control">

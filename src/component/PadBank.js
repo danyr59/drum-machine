@@ -13,7 +13,9 @@ class PadBank extends Component {
           keyCode={current.keyCode}
           keyTrigger={current.keyTrigger}
           id={current.id}
-          url={current.url}
+          url={this.props.power ? current.url : ""}
+          updateDisplay={this.props.updateDisplay}
+          power={this.props.power}
         />
       );
     });
