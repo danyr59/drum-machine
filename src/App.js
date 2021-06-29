@@ -65,8 +65,11 @@ class App extends Component {
     console.log(this.state.currentPadBank);
     return (
       <div className="App">
-        <div className="App-header" id="drum-machine">
-          <div className="contenedor border border-warning border-5">
+        <div className="App-header">
+          <div
+            id="drum-machine"
+            className="contenedor border border-warning border-5"
+          >
             <div className="logo">
               <i className="bi bi-music-note-beamed"></i>
             </div>
