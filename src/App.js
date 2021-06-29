@@ -54,12 +54,6 @@ class App extends Component {
       display: String.fromCharCode(160),
     });
   }
-  componentDidUpdate(prevProps, prevState) {
-    console.log("componentDidUpdate()");
-  }
-  componentDidMount() {
-    console.log("componentDidMount");
-  }
   updateDisplay(textDisplay) {
     if (this.state.power) {
       this.setState({
